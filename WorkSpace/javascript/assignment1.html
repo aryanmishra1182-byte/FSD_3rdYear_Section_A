@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            width: 320px;
+            text-align: left;
+            border-top: 5px solid #007bff;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333333;
+            border-bottom: 2px dashed #e0e0e0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .card-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+            font-size: 15px;
+            color: #555555;
+        }
+        .card-row .label {
+            font-weight: 600;
+        }
+        .total-row {
+            border-top: 2px dashed #e0e0e0;
+            padding-top: 12px;
+            margin-top: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div id="receipt-container"></div>
+    <script>
+        const product = {
+            Tea: 450,
+            cold_coffee: 600,
+            sugar: 700,
+            Coffee_Latte: 500,
+            Cold_Drink: 150
+        };
+        alert("What would you like:\nTea: 450\ncold_coffee: 600\nsugar: 700\nCoffee_Latte: 500\nCold_Drink: 150");
+        let inp1 = prompt("Enter your product:");
+        let inp2 = parseInt(prompt("Enter your Quantity:"));
+        if (product[inp1] && !isNaN(inp2)) {
+            let totalCost = product[inp1] * inp2; 
+            document.getElementById("receipt-container").innerHTML = `
+                <div class="card">
+                    <h3>Order Receipt</h3>
+                    <div class="card-row">
+                        <span class="label">Product:</span>
+                        <span>${inp1}</span>
+                    </div>
+                    <div class="card-row">
+                        <span class="label">Quantity:</span>
+                        <span>${inp2}</span>
+                    </div>
+                    <div class="card-row total-row">
+                        <span>Total Cost:</span>
+                        <span>$${totalCost}</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            document.getElementById("receipt-container").innerHTML = `
+                <div class="card" style="border-top-color: #dc3545; text-align: center;">
+                    <p style="color: #dc3545; font-weight: bold;">Invalid Product or Quantity entered.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

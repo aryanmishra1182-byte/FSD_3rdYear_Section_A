@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //create an object
+        let student={
+            Name:"Aryan",
+            Branch:"CSE-DS",
+            Section:"A",
+            College:"ABES ENGINEERING COLLEGE",
+            Fee:128000
+        }
+        // JSON is stored in ARRAY OF OBJECTS
+        // document.write(student.Name+"<br>"+student.Branch+"<br>"+student.Section+"<br>"+student.College+"<br>"+student.Fee);
+    for (const element in student) {
+        document.write(student[element]+"<br>");
+    }
+    </script>
+</body>
+</html>
