@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const car=["car1","car2","car3"];
+        let text=" ";
+        let len=car.length;
+    for(let i=0;i<len;i++){
+        text+=car[i]+"<br>";
+    }
+    document.getElementById("demo").innerHTML=text;
+let a="";
+    for(let i=0;i<len;i++){
+        if(i!=1)
+     a+=car[i]+" ";
+    }
+    document.getElementById("demo").innerHTML=a;
+    let n=1;
+    while(n<=5){
+        document.write("<br>hello");
+        n++;
+    }
+    let t=1;
+    while(t<=10){
+        document.write("<br>"+"2 *"+t+"="+t*2);
+        t++;
+    }
+    </script>
+</body>
+</html>
