@@ -11,6 +11,13 @@
         const b11=[14,5,6];
         const c=[...a11,...b11];
         document.write(c);
+        localStorage.setItem();
+        // 1. Save the array to the browser's local storage
+        localStorage.setItem("my_array_db", JSON.stringify(c));
+        // 2. Retrieve the array back from local storage
+        const storedData = JSON.parse(localStorage.getItem("my_array_db"));
+        // 3. Print the retrieved array to verify it works
+        document.write("Retrieved from LocalStorage: " + storedData);
     </script>
 </body>
 </html>

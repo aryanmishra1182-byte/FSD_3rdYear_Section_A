@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a="USERNAME:";
+        let b="PASSWORD";
+        function func(a,b){
+          let h=  prompt("Username");
+         let f=   prompt("Password");
+         if(a==h&&b==f)
+         return true;
+        else
+        return false;
+        }
+        function Msg(call_back,msg){
+            let result=call_back(a,b);
+            if(result!=false){
+            let fresult="HI "+a+msg+"YOU HAVE LOGGED IN SUCCESSFULLY"+result;
+            console.log(fresult);}
+            else
+            console.log("Login Failed");
+        }
+        Msg(func,"LOGIN SUCCESSFUL ");
+    </script>
+</body>
+</html>
